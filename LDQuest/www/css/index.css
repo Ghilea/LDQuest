@@ -1,0 +1,1105 @@
+/***************************/
+/* reset css structure     */
+/***************************/
+*, a, abbr, acronym, address, applet, article, aside, audio, b, blockquote, big, body, center, canvas, caption, cite, code, command, datalist, dd, del, details, dfn, dl, div, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, keygen, label, legend, li, meter, nav, object, ol, output, p, pre, progress, q, s, samp, section, small, span, source, strike, strong, sub, sup, table, tbody, tfoot, thead, th, tr, tdvideo, tt, u, ul, var, br {
+    border: none;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/***************************/
+/* base css structure      */
+/***************************/
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+ }
+
+a {
+    outline: 0;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+table, table td {
+    padding: 0;
+    border: none;
+    border-collapse: collapse;
+}
+
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {
+    display: block;
+}
+
+mark, rp, rt, ruby, summary, time {
+    display: inline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-weight: normal;
+    line-height: 1.75em;
+}
+
+em, i {
+    font-style: italic;
+}
+
+section, article {
+    margin: 2em 0 2em 0;
+}
+
+    section:last-child, article:last-child {
+        margin-bottom: 0;
+    }
+
+input, textarea {
+    text-align: left;
+    font-size: 120%;
+    font-weight: 400;
+    color: rgb(51,42,29);
+    resize: none;
+    width: 100%;
+    height: auto;
+    line-height: 1.2em;
+    overflow: hidden;
+    margin: 0 5px 5px 0;
+    padding: 5px;
+}
+    
+    input:focus, textarea:focus {
+        outline: 0 solid transparent;
+    }
+
+option[value=""][disabled] {
+    display: none;
+}
+
+html, body {
+    -webkit-touch-callout: none;
+    -ms-text-size-adjust: auto;
+    -webkit-text-size-adjust: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    color: rgb(0,0,0);
+    font-weight: 400;
+    line-height: 1.85em;
+    font-size: 0.95em;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+/***************************/
+/* checkmark input         */
+/***************************/
+/*switch*/
+/*label {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: 3px solid rgb(114,94,67);
+    box-shadow: 0 0 10px rgb(255,255,255);
+    box-shadow: 0 0 10px rgba(255,255,255,0.4);
+    z-index: 2;
+    position: absolute;
+    right: 15px;
+    bottom: 25px;
+}*/
+
+/*input[type="checkbox"]:checked ~ label {
+    background-image: url("images/check.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}*/
+
+/* The container */
+.container {
+    display: block;
+    position: absolute;
+    right: 15px;
+    bottom: 35px;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    /* Hide the browser's default checkbox */
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgb(0,0,0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,0.5);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,0.5);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/***************************/
+/* background              */
+/***************************/
+#bodyWrapper {
+    animation-name: example;
+    animation-duration: 400s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.sectionStyle {
+    background-image: url("images/backgrounds/main.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#styleTavern {
+    background-image: url("images/backgrounds/tavern.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#styleArena, #styleFight {
+    background-image: url("images/backgrounds/arena.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Standard syntax */
+@keyframes example {
+    0% {
+        background-position: center;
+    }
+
+    10% {
+        background-position: top right;
+    }
+
+    20% {
+        background-position: center;
+    }
+
+    30% {
+        background-position: bottom left;
+    }
+
+    40% {
+        background-position: center;
+    }
+    
+    50% {
+        background-position: bottom right;
+    }
+    
+    60% {
+        background-position: center;
+    }
+
+    70% {
+        background-position: top left;
+    }
+
+    80% {
+        background-position: center;
+    }
+
+    90% {
+        background-position: center;
+    }
+
+    100% {
+        background-position: center;
+    }
+}
+
+/***************************/
+/* placeholder    		   */
+/***************************/
+#styleTop input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: rgb(255,255,255);
+}
+
+#styleTop input::-moz-placeholder { /* Firefox 19+ */
+    color: rgb(255,255,255);
+}
+
+#styleTop input:-ms-input-placeholder { /* IE 10+ */
+    color: rgb(255,255,255);
+}
+
+#styleTop input:-moz-placeholder { /* Firefox 18- */
+    color: rgb(255,255,255);
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: rgb(51,42,29 );
+    text-shadow: rgba(255,255,255,0.2) 1px 1px 0;
+    white-space: pre-wrap;
+    font-size: 80%;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder { /* Firefox 19+ */
+    color: rgb(51,42,29);
+    text-shadow: rgba(255,255,255,0.2) 1px 1px 0;
+    white-space: pre-wrap;
+    font-size: 80%;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { /* IE 10+ */
+    color: rgb(51,42,29);
+    text-shadow: rgba(255,255,255,0.2) 1px 1px 0;
+    white-space: pre-wrap;
+    font-size: 80%;
+}
+
+input:-moz-placeholder, textarea:-moz-placeholder { /* Firefox 18- */
+    color: rgb(51,42,29);
+    text-shadow: rgba(255,255,255,0.2) 1px 1px 0;
+    white-space: pre-wrap;
+    font-size: 80%;
+}
+
+/***************************/
+/* message      		   */
+/***************************/
+#messageBox {
+    display: none;
+    position: fixed;
+    width: 250px;
+    height: auto;
+    padding: 10px;
+    margin: -50px 0 0 -125px;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: rgb(255,255,255);
+    color: rgba(255,255,255,1);
+    border-radius: 5px;
+    background-color: rgb(114,94,67);
+    background-color: rgba(114,94,67,0.9);
+    font-size: 100%;
+    z-index: 999;
+    box-shadow: 0 0 10px rgb(0,0,0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-color: rgb(51,42,29);
+    border: 4px solid transparent;
+}
+
+#version {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+}
+
+/***************************/
+/* box  				   */
+/***************************/
+.box {
+    position: relative;
+    font-weight: 600;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: rgb(114,94,67);
+    box-shadow: 0 0 10px rgb(0,0,0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    border: 2px solid transparent;
+    color: rgb(51,42,29);
+    text-shadow: rgba(255,255,255,0.2) 1px 1px 0;
+    margin: 0.3em 0;
+}
+
+.lastChild:last-child {
+    margin-bottom: 95px;
+}
+
+.box h2 {
+    width: 100%;
+    text-shadow: rgba(34,28,20,0.3) 1px 1px 0;
+    color: rgb(51,42,29);
+    white-space: pre-wrap;
+    font-size: 100%;
+    font-weight: 600;
+    line-height: 1em;
+}
+
+.box h3 {
+    width: 100%;
+    color: rgb(91,84,74);
+    text-shadow: rgba(255,255,255,0.2) 1px 1px 0;
+    font-weight: 600;
+    white-space: pre-wrap;
+    font-size: 115%;
+    line-height: 1.5em;
+}
+
+.box h4 {
+    color: rgb(91,84,74);
+    text-shadow: rgba(255,255,255,0.2) 1px 1px 0;
+    font-weight: 600;
+    white-space: pre-wrap;
+    font-size: 115%;
+    line-height: 1.5em;
+    float: left;
+    margin: 5px 5px 0 0;
+}
+
+.box p {
+    width: 100%;
+    color: rgb(51,42,29);
+    text-shadow: rgba(255,255,255,0.2) 1px 1px 0;
+    white-space: pre-wrap;
+    font-size: 100%;
+    font-weight: 600;
+    line-height: 1.5em;
+}
+
+.box img {
+    width: 100%;
+    max-width: 20%;
+    height: auto;
+    padding: 10px;
+    float: left;
+    opacity: 0.7
+}
+
+.box .listP {
+    color: rgb(51,42,29);
+    text-shadow: rgba(255,255,255,0.2) 1px 1px 0;
+    font-size: 100%;
+    float: left;
+    margin: 6px 0 0 0;
+}
+
+.box .listImg {
+    width: 35px;
+    height: auto;
+    float: left;
+}
+
+.box .subP {
+    width: 35px;
+    color: rgb(51,42,29);
+    text-shadow: rgba(255,255,255,0.2) 1px 1px 0;
+    white-space: pre-wrap;
+    font-size: 100%;
+    font-weight: 600;
+    float: left;
+    margin: 5px 0 0 0;
+}
+
+.box .subImg {
+    width: 35px;
+    height: auto;
+    float: left;
+}
+
+.boxButtonL {
+    border-color: rgb(51,42,29);
+    box-shadow: 0 0 10px rgb(0,0,0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    border: 4px solid transparent;
+    color: rgb(255,255,255);
+}
+
+    .boxButtonL:hover {
+        background: rgb(46, 42, 38);
+    }
+
+/***************************/
+/* styleGameQuestList      */
+/***************************/
+
+#toggleAvatar {
+    display:none;
+}
+
+#addQuestCode {
+    text-align: center;
+    font-size: 120%;
+    font-weight: 400;
+    color: white;
+    resize: none;
+    position: relative;
+    background-color: rgb(55,48,82);
+    background-color: rgba(55,48,82,0.4);
+    box-shadow: 0 0 10px rgb(0,0,0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    width: 100%;
+    height: 40px;
+    line-height: 1.2em;
+    overflow: hidden;
+    margin: 0 0 3px 0;
+    padding: 5px;
+}
+
+#addQuestCodeButton {
+    position: absolute;
+    right: 15px;
+    bottom:17px;
+    width: 25px;
+    height: auto;
+}
+
+#addQuestCodeButton img {
+    width: 100%;
+    height: auto;
+    background-color:black;
+}
+
+    #addQuestCodeButton:active {
+        opacity:0.5;
+    }
+
+.ComingSoon{
+    opacity:0.2;
+}
+
+/***************************/
+/* timer    			   */
+/***************************/
+.levelBox {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -70px 0 0 -70px;
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+    background: rgb(255,255,255);
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 10px rgb(0,0,0);
+    z-index: 2;
+}
+
+    .levelBox h2 {
+        width: 80px;
+        height: 70px;
+        text-align: center;
+        font-size: 450%;
+        color: rgb(0,0,0);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -35px 0 0 -40px;
+        line-height: 1.1em;
+    }
+
+    .levelBox:active {
+        opacity: 0.5;
+        border: 3px solid rgb(0,0,0);
+        border: 3px solid rgba(0,0,0,0.3);
+    }
+
+    .levelBox img {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+/***************************/
+/* styles    			   */
+/***************************/
+#styleTop {
+    display: none;
+    z-index: 2;
+    width: 100%;
+    height: 160px;
+    background: rgb(191,157,112);
+    background: rgba(191,157,112,0.9);
+    box-shadow: 0 0 50px 10px rgb(0,0,0);
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.75);
+}
+
+#menu {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+    #menu h2 {
+        position: fixed;
+        left: 20px;
+        bottom: 10px;
+        color: rgb(0,0,0);
+        color: rgba(0,0,0,0.5);
+        white-space: pre-wrap;
+        font-size: 145%;
+        text-align: center;
+    }
+
+    #menu p {
+        color: rgb(0,0,0);
+        color: rgba(0,0,0,0.5);
+        white-space: pre-wrap;
+        font-size: 95%;
+        text-align: center;
+    }
+
+    #menu img {
+        position: relative;
+        left: 50%;
+        width: 30px;
+        margin: 0 0 0 -15px;
+        height: auto;
+    }
+
+#mapContent {
+    width:100%;
+    height:100%;
+}
+
+#styleAdd, #styleChat, #styleSettings, #styleAccount, #styleNewProtagonist, #styleMap, #styleTavern, #styleArena, #styleFight {
+    display: none;
+}
+
+.sectionStyle {
+    z-index: 2;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: rgb(0,0,0);
+    overflow: auto;
+    background-color: rgb(255,255,255);
+}
+
+    .sectionStyle header {
+        width: 100%;
+        height: auto;
+        color: rgb(255,255,255);
+    }
+
+        .sectionStyle header h1 {
+            font-weight: 600;
+            font-size: 250%;
+            margin: 10px 0 0 0;
+            text-align: center;
+            text-shadow: 1px 1px rgb(0,0,0);
+        }
+
+    .sectionStyle h2 {
+        font-weight: 600;
+        font-size: 160%;
+        margin: 0 0 5px 5px;
+        color: rgb(255,255,255);
+        text-shadow: 1px 1px rgb(0,0,0);
+    }
+
+    .sectionStyle h3 {
+        font-size: 100%;
+        font-weight: 400;
+    }
+
+    .sectionStyle p {
+        font-size: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+#styleNewProtagonist, #styleAccount {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: rgb(51,42,29);
+    overflow: auto;
+}
+
+    #styleNewProtagonist header h1, #styleAccount header h1 {
+        color: rgb(255,255,255);
+        font-size: 140%;
+        padding: 1em 0 1em 0;
+        text-align: center;
+    }
+
+    #styleAccount header h2 {
+        width: auto;
+        height: auto;
+        color: rgb(255,255,255);
+        font-size: 125%;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        margin: 4.2em 0 0 1.5em;
+    }
+
+    #styleNewProtagonist h2, #styleAccount h2 {
+        font-weight: 400;
+        font-size: 125%;
+        margin: 0 0 5px 5px;
+        color: rgb(255,255,255);
+        text-shadow: 1px 1px rgb(0,0,0);
+    }
+
+    #styleNewProtagonist #p_avatar, #styleAccount #a_avatar {
+        margin: auto;
+        width: 10em;
+        height: 10em;
+        border-radius: 100%;
+        box-shadow: 0 0 50px 10px rgb(0,0,0);
+        box-shadow: 0 0 10px 1px rgba(0,0,0,0.75);
+        background-color: rgb(255,255,255);
+        background-color: rgba(255,255,255,0.6);
+        overflow: hidden;
+    }
+
+        #styleNewProtagonist #p_avatar img, #styleAccount #a_avatar img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+
+.leftButton1, .leftButton2, .middleButton, .rightButton1, .rightButton2, #selectRace {
+    color: rgb(255,255,255);
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+    background: rgb(20,16,11);
+    box-shadow: 0 0 50px 10px rgb(0,0,0);
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.75);
+}
+
+.leftButton1 h2, .leftButton2 h2, .middleButton h2, .rightButton1 h2, .rightButton2 h2 {
+    color: rgb(255,255,255);
+}
+
+    .leftButton1 img, .leftButton2 img, .middleButton img, .rightButton1 img, .rightButton2 img {
+        width:100%;
+        height:auto;
+        padding:0.8em;
+    }
+
+    .leftButton1 {
+        position: absolute;
+        left: 50%;
+        margin: 1em 0 0 -9.5em;
+    }
+
+    .leftButton2 {
+        position: absolute;
+        left: 50%;
+        margin: 8em 0 0 -8.5em;
+    }
+
+    .rightButton1 {
+        position: absolute;
+        right: 50%;
+        margin: 1em -9.5em 0 0;
+    }
+
+    .rightButton2 {
+        position: absolute;
+        right: 50%;
+        margin: 8em -8.5em 0 0;
+    }
+    
+    .middleButton {
+        margin: 1em auto;
+    }
+
+        .middleButton img {
+            width: 100%;
+            height: auto;
+            padding: 10px;
+        }
+
+#styleAccount .avatar {
+    width: 120px;
+    height: auto;
+    border: 2px solid rgb(114,94,67);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(255,255,255);
+}
+
+#styleNewProtagonist h4 {
+    font-size: 100%;
+    font-weight: 600;
+    text-align: center;
+}
+
+#styleNewProtagonist p {
+    font-size: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0 0 5px 10px;
+}
+
+    #styleNewProtagonist p span {
+        font-weight: 600;
+    }
+
+    #styleAccount p {
+        float: left;
+        font-size: 105%;
+        width: auto;
+        height: auto;
+    }
+
+/***************************/
+/* add quest    		   */
+/***************************/
+.removeQuest {
+    float: right;
+    margin: 5px 10px 0 5px;
+    max-width: 15px;
+    width: 100%;
+    height: auto;
+}
+
+#questText:empty:not(:focus):before, #questTitle:empty:not(:focus):before, .questText:empty:not(:focus):before, #addQuestCode:empty:not(:focus):before {
+    content: attr(data-text);
+}
+
+/***************************/
+/* button     			   */
+/***************************/
+#buttonMenu {
+    position: fixed;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    height: auto;
+    z-index: 3;
+}
+
+.styleButton {
+    margin: 0 auto;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 100%;
+    background: rgba(34,28,20,0.3);
+    box-shadow: 0 0 10px rgb(0,0,0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.75);
+}
+
+    .styleButton:active, .styleButton:hover {
+        opacity: 0.8;
+        border: 3px solid rgb(0,0,0);
+        border: 3px solid rgba(0,0,0,0.3);
+    }
+
+    .styleButton img {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+.styleButtonPicture {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    background: rgb(114,94,67);
+    border: 3px solid rgb(0,0,0);
+    border: 3px solid rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgb(0,0,0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+    .styleButtonPicture p {
+        color: rgb(255,255,255);
+        font-weight: 600;
+        padding: 2px 5px;
+        text-align: center;
+    }
+
+    .styleButtonPicture:active {
+        opacity: 0.8;
+        border: 3px solid rgb(0,0,0);
+        border: 3px solid rgba(0,0,0,0.5);
+    }
+
+#closeButton {
+    background-color: rgb(238, 82, 85);
+}
+
+#chatButton, #settingsButton, #closeButton, #addPicture, #addMoreQuest {
+    margin-top: 10px;
+}
+
+.boxButton {
+    position: relative;
+    line-height: 1em;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: rgb(51,42,29);
+    box-shadow: 0 0 10px rgb(0,0,0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    border: 4px solid transparent;
+    color:rgb(255,255,255);
+}
+
+.boxButton img {
+    width:2em;
+    height:2em;
+    position: absolute;
+    right:10px;
+    bottom:2px;
+}
+
+    .boxButton .subImg {
+        width: 1em;
+        height: 1em;
+        position: absolute;
+        left: 10px;
+        bottom: 4px;
+        margin: 0 0 0 5px;
+    }
+
+    .boxButton:hover {
+        background: rgb(46, 42, 38);
+    }
+
+.addStatsButton {
+    position: relative;
+    line-height: 1em;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: rgb(114,94,67);
+    box-shadow: 0 0 10px rgb(0,0,0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    border: 4px solid transparent;
+    color: rgb(51,42,29);
+    text-shadow: rgba(255,255,255,0.2) 1px 1px 0;
+}
+
+    .addStatsButton img {
+        width: 1em;
+        height: 1em;
+        position: absolute;
+        right: 0;
+        top: 4px;
+    }
+
+/***************************/
+/* Misc                    */
+/***************************/
+.Locked {
+    display: none;
+}
+
+.Inactive {
+    opacity:0.5;
+}
+
+.margin {
+    margin: 10px 0 0 0;
+}
+
+.padding {
+    width:100%;
+    padding: 10px 0 0 10px;
+}
+
+.highlight {
+    background-color: rgb(114,94,67);
+    background-color: rgba(114,94,67,0.4);
+}
+
+.center {
+    margin:0 auto;
+    text-align:center;
+}
+
+.last {
+    margin-bottom: 95px;
+}
+
+.bold {
+    font-weight:600;
+}
+
+.lineHeight {
+    line-height: 1.5em;
+    max-height:200px;
+}
+
+.c_img {
+    max-width:100% !important;
+}
+
+.c_combatLog {
+    max-height: 7em;
+    height: 100%;
+}
+/***************************/
+/* texture                 */
+/***************************/
+.box, #messageBox, #styleTop, #styleTop, #styleAccount, #styleNewProtagonist, .styleButton, .boxButton, .boxButton:hover, .boxButtonL, .boxButtonL:hover, .leftButton1, .leftButton2, .middleButton, .rightButton1, .rightButton2, #selectRace {
+    background-image: url("images/patterns/dust.png");
+    -webkit-border-image: url("images/patterns/dust.png") 30 round; /* Safari 3.1-5 */
+    -o-border-image: url("images/patterns/dust.png") 30 round; /* Opera 11-12.1 */
+    -moz-border-image: url("images/patterns/dust.png") 30 round; /* Firefox */
+    border-image: url("images/patterns/dust.png") 30 round;
+}
+
+/***************************/
+/* override                */
+/***************************/
+.overflowText {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/***************************/
+/* Grid					   */
+/***************************/
+#bodyWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: auto;
+}
+
+    #content:after {
+        content: "\0020";
+        display: block;
+        clear: both;
+        visibility: hidden;
+    }
+
+.wrap-col {
+    position: relative;
+    padding: 0.3em;
+    margin: 0.5em;
+    overflow: hidden;
+}
+
+[class*="col-"] {
+    float: left;
+    width: 100%;
+}
+
+/***************************/
+/* Grid-screen     		   */
+/***************************/
+@media only screen and (min-width: 100px) {
+    .col-1-12 {
+        width: 8.33%;
+    }
+
+    .col-2-12 {
+        width: 16.66%;
+    }
+
+    .col-3-12 {
+        width: 25%;
+    }
+
+    .col-4-12 {
+        width: 33.33%;
+    }
+
+    .col-5-12 {
+        width: 41.66%;
+    }
+
+    .col-6-12 {
+        width: 50%;
+    }
+
+    .col-7-12 {
+        width: 58.33%;
+    }
+
+    .col-8-12 {
+        width: 66.66%;
+    }
+
+    .col-9-12 {
+        width: 75%;
+    }
+
+    .col-10-12 {
+        width: 83.33%;
+    }
+
+    .col-11-12 {
+        width: 91.66%;
+    }
+
+    .col-full {
+        width: 100%;
+    }
+}

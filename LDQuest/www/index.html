@@ -1,0 +1,789 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--<meta http-equiv="Content-Security-Policy" content="img-src https://codepush.azurewebsites.net http://89.160.115.26/ 'self' data: gap: https://ssl.gstatic.com https://bing.com https://virtualearth.net 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;">-->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src http://89.160.115.26/ 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline' http://89.160.115.26/ https://*.bing.com https://*.virtualearth.net; style-src 'self' 'unsafe-inline' http://89.160.115.26/ https://*.bing.com https://*.virtualearth.net; media-src *">-->
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta charset="utf-8" http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- ICON -->
+    <link rel="icon" href="#">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
+    <title></title>
+</head>
+<body>
+
+    <!-- bodyWrapper -->
+    <div id="bodyWrapper" class="sectionStyle">
+        <!--                      -->
+        <!--    style Top         -->
+        <!--                      -->
+        <div id="styleTop">
+
+            <!-- top menu -->
+            <div id="menu">
+
+                <!-- Arena -->
+                <div id="arenaButton" class="col-4-12">
+                    <div class="wrap-col">
+                        <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/arena.svg" alt="">
+                        <p>Arena</p>
+                    </div>
+                </div>
+
+                <!-- Tavern -->
+                <div id="tavernButton" class="col-4-12">
+                    <div class="wrap-col">
+                        <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/bag.svg" alt="">
+                        <p>Tavern</p>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div id="openMap" class="col-4-12">
+                    <div class="wrap-col">
+                        <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/map.svg" alt="">
+                        <p>Map</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- news -->
+            <div id="newsMessage"></div>
+
+            <!-- content -->
+            <div id="content"></div>
+
+        </div>
+        <!--                      -->
+        <!-- levelBox             -->
+        <!--                      -->
+        <div id="levelBox"></div>
+        <!--                      -->
+        <!-- map                  -->
+        <!--                      -->
+        <div id="styleMap" class="sectionStyle">
+            <div id="mapContent"></div>
+        </div><!-- styleMap end -->
+        <!--                      -->
+        <!--    chat              -->
+        <!--                      -->
+        <div id="styleChat" class="sectionStyle">
+
+            <!-- header -->
+            <header><h1>Chat</h1></header>
+
+            <!-- information -->
+            <div class="col-full last">
+                <div class="wrap-col adding">
+
+                    <!-- settings -->
+                    <div id="playerBox"></div>
+
+                    <!-- quest title -->
+                    <div class="col-full box">
+
+                        <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/feedback.svg" alt="">
+
+                        <h3>name of player</h3>
+
+                    </div>
+
+                </div>
+            </div><!-- end information -->
+        </div> <!-- styleChat end -->
+        <!--                      -->
+        <!--    add quest         -->
+        <!--                      -->
+        <div id="styleAdd" class="sectionStyle">
+
+            <!-- header -->
+            <header><h1>Create quest</h1></header>
+
+            <!-- information -->
+            <div class="col-full last">
+                <div class="wrap-col adding">
+
+                    <!-- title -->
+                    <h2>Title</h2>
+
+                    <form><input id="questTitle" class="box" placeholder="Retrieve your honor..." /></form>
+
+                    <!-- description -->
+                    <h2>Description</h2>
+                    <form><textarea id="questDescription" class="box" placeholder="A gnome stole your bike..."></textarea></form>
+
+                    <!-- vibration -->
+                    <h2>Quest</h2>
+                    <form><textarea class="questline box" placeholder="To find the gnome you have..."></textarea></form>
+
+                </div>
+            </div><!-- end information -->
+        </div> <!-- styleAdd end -->
+        <!--                      -->
+        <!--    styleTavern       -->
+        <!--                      -->
+        <div id="styleTavern" class="sectionStyle">
+
+            <!-- header -->
+            <header><h1>The Crane Tavern</h1></header>
+
+            <!-- information -->
+            <div class="col-full last">
+                <div class="wrap-col">
+
+                    <!-- quest -->
+                    <h2>Quest</h2>
+
+                    <!-- add quest code
+                <div class="col-full box">
+                    <div class="wrap-col">
+                        <input id="addQuestCode" class="box" placeholder="Input your quest code here..." />
+                        <div id="addQuestCodeButton" title="Add quest code">
+                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/add.svg" alt="">
+                        </div>
+                    </div>
+                </div>-->
+
+                    <div class="col-full box">
+                        <div id="availableQuest" class="wrap-col">
+
+                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/tavern/quest.svg" alt="">
+
+                            <h3>Search for new adventures</h3>
+                            <p>NPC and other players can offer quest.</p>
+
+                        </div>
+                    </div>
+
+                    <div id="showAvailableQuest"></div>
+
+                    <!-- Merchants -->
+                    <h2>Merchants</h2>
+
+                    <div class="col-full box">
+                        <div class="wrap-col">
+
+                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/tavern/merchants.svg" alt="">
+
+                            <h3>Sell or buy</h3>
+                            <p>Participat in trade with NPC's or other players.</p>
+
+                        </div>
+                    </div>
+
+                    <!-- create quest -->
+                    <h2>Chat</h2>
+
+                    <div id="chatButton" class="col-full box">
+                        <div class="wrap-col">
+
+                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/tavern/chat.svg" alt="">
+
+                            <h3>Chat</h3>
+                            <p>Chat with other players.</p>
+
+                        </div>
+                    </div>
+
+                    <!-- Story -->
+                    <h2>Bard</h2>
+
+                    <div class="col-full box">
+                        <div class="wrap-col">
+
+                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/tavern/bard.svg" alt="">
+
+                            <h3>Stories and songs</h3>
+                            <p>Listening to NPC's or other players.</p>
+
+                        </div>
+                    </div>
+
+                    <!-- create quest -->
+                    <h2>Create quest (1000 gold)</h2>
+
+                    <div id="addQuestButton" class="col-full box">
+                        <div class="wrap-col">
+
+                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/tavern/quest.svg" alt="">
+
+                            <h3>Create quest</h3>
+                            <p>Create your own quest for other players.</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div> <!-- styleTavern end -->
+        <!--                      -->
+        <!--    styleArena       -->
+        <!--                      -->
+        <div id="styleArena" class="sectionStyle">
+
+            <!-- header -->
+            <header><h1>Arena</h1></header>
+
+            <!-- settings -->
+            <div class="col-full last">
+                <div class="wrap-col">
+
+                    <!-- quest -->
+                    <h2>Greenhorn arena (cost 20 gold)</h2>
+
+                    <div id="greenhornButton" class="col-full box">
+                        <div class="wrap-col">
+
+                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/arena/monster.svg" alt="">
+
+                            <h3>Fight waves of monsters</h3>
+                            <p>You can earn experience and if your lucky find treasures.</p>
+
+                        </div>
+                    </div>
+
+                    <!-- Merchants -->
+                    <h2>Scrapper (cost 100 gold)</h2>
+
+                    <div class="col-full box">
+                        <div class="wrap-col">
+
+                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/arena/scrapper.svg" alt="">
+
+                            <h3>Fight other players (easy)</h3>
+                            <p>Earn honor, get more popularity and earn normal amount experience. No risk to lose experience if you fail.</p>
+
+                        </div>
+                    </div>
+
+                    <!-- create quest -->
+                    <h2>Warlord (cost 500 gold)</h2>
+
+                    <div class="col-full box">
+                        <div class="wrap-col">
+
+                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/arena/warlord.svg" alt="">
+
+                            <h3>Fight other players (hard)</h3>
+                            <p>Earn honor, get more popularity and earn high amount of experience. High risk to lose experience too if you fail.</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div> <!-- styleArena end -->
+        <!--                      -->
+        <!--    Fight             -->
+        <!--                      -->
+        <div id="styleFight" class="sectionStyle">
+
+            <!-- vs creature -->
+            <div class="col-6-12">
+                <div class="wrap-col">
+
+                    <!-- quest -->
+                    <h2><span class="c_name"></span> (<span class="c_hp"></span> HP)</h2>
+
+                    <!-- description -->
+                    <div class="col-full box">
+                        <div class="wrap-col">
+
+                            <p class="c_portrait"></p>
+
+                        </div>
+                    </div>
+                    <div class="col-full box">
+                        <div class="wrap-col">
+
+                            <p class="c_desc"></p>
+
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+
+            <!-- vs player -->
+            <div class="col-6-12">
+                <div class="wrap-col">
+
+                    <h2><span class="cp_name"></span> (<span class="cp_hp"></span> HP)</h2>
+
+                    <div class="col-full box">
+                        <div class="wrap-col">
+
+                            <p class="p-combatInfo"></p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- combat log -->
+            <div class="col-full last">
+                <div class="wrap-col">
+
+                    <!-- combat log -->
+                    <h2>Combat log</h2>
+
+                    <div class="col-full box">
+                        <div class="wrap-col">
+
+                            <p class="bold">Creatures may attack back or try to escape if you attacking them.</p>
+                            <p class="lineHeight c_combatLog"></p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div> <!-- styleFight end -->
+        <!--                      -->
+        <!--    Settings          -->
+        <!--                      -->
+        <div id="styleSettings" class="sectionStyle">
+
+            <div id="version"></div>
+
+            <!-- header -->
+            <header><h1>Settings</h1></header>
+
+            <!-- settings -->
+            <div class="col-full last">
+                <div class="wrap-col">
+
+                    <h2>Sound and music</h2>
+
+                    <!-- sound -->
+                    <div class="col-full box">
+                        <div class="wrap-col">
+
+                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/feedback.svg" alt="">
+
+                            <h3>Sound</h3>
+                            <p>Ingame soundeffect.</p>
+
+                            <label class="container">
+                                <input id="sound" type="checkbox" name="sound">
+                                <span class="checkmark"></span>
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <!-- music -->
+                    <div class="col-full box">
+                        <div class="wrap-col">
+
+                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/feedback.svg" alt="">
+
+                            <h3>Music</h3>
+                            <p>Ingame music.</p>
+
+                            <label class="container">
+                                <input id="music" type="checkbox" name="music">
+                                <span class="checkmark"></span>
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <!-- vibration -->
+                    <div class="col-full box">
+                        <div class="wrap-col">
+
+                            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/feedback.svg" alt="">
+
+                            <h3>Vibration</h3>
+                            <p>Button vibration.</p>
+
+                            <label class="container">
+                                <input id="vibration" type="checkbox" name="vibration">
+                                <span class="checkmark"></span>
+                            </label>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div> <!-- styleSettings end -->
+        <!--                      -->
+        <!--    account           -->
+        <!--                      -->
+        <div id="styleAccount" class="sectionStyle">
+
+            <!-- information -->
+            <div class="col-full">
+                <div class="wrap-col">
+
+                    <!-- Equipment -->
+                    <div class="col-4-12 boxButton">
+                        <div class="wrap-col">
+
+                            <h3 class="center">Equipment</h3>
+
+                        </div>
+                    </div>
+
+                    <!-- Friends -->
+                    <div class="col-4-12 boxButton">
+                        <div class="wrap-col">
+
+                            <h3 class="center">Friends</h3>
+
+                        </div>
+                    </div>
+
+                    <!-- delete protagonist -->
+                    <div class="col-4-12 boxButton">
+                        <div class="wrap-col">
+
+                            <h3 class="center">Delete</h3>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- header -->
+            <header><h1 class="p_name listP"></h1><h2 class="p_level"></h2></header>
+
+            <!-- Strenght -->
+            <div id="strength" class="leftButton1">
+                <p class="p_strength"></p>
+                <h2>Strenght</h2>
+            </div>
+
+            <!-- Health points -->
+            <div class="leftButton2">
+                <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/hp.svg">
+                <h2 class="p_HP"></h2>
+            </div>
+
+            <!-- Dexterity -->
+            <div id="dexterity" class="rightButton1">
+                <p class="p_dexterity"></p>
+                <h2>Dexterity</h2>
+            </div>
+
+            <!-- gender -->
+            <div class="rightButton2">
+                <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/female.svg">
+                <h2 class="p_gender"></h2>
+            </div>
+
+            <!-- picture -->
+            <div id="a_avatar">
+                <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/avatar/default.svg">
+            </div>
+
+            <!-- Luck -->
+            <div id="luck" class="middleButton">
+                <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/luck.svg">
+                <h2 class="p_luck"></h2>
+            </div>
+
+            <!-- information -->
+            <div class="col-full last">
+                <div class="wrap-col">
+
+                    <!-- stats -->
+                    <h2>Points</h2>
+
+                    <div class="col-full box">
+
+                        <img class="listImg" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/feedback.svg" alt="">
+
+                        <h4>Points available</h4>
+                        <p class="p_points listP"></p>
+
+                    </div>
+
+                    <!-- character information -->
+                    <h2>Basic</h2>
+
+                    <!-- Experience -->
+                    <div class="col-4-12 box">
+                        <div class="wrap-col">
+
+                            <h3 class="center">Exp</h3>
+                            <p class="p_experience center"></p>
+
+                        </div>
+                    </div>
+
+                    <!-- Race -->
+                    <div class="col-full box">
+
+                        <img class="listImg" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/feedback.svg" alt="">
+
+                        <h4>Race</h4>
+                        <p class="p_race listP"></p>
+
+                    </div>
+
+                    <!-- Age -->
+                    <div class="col-full box">
+
+                        <img class="listImg" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/feedback.svg" alt="">
+
+                        <h4>Age</h4>
+                        <p class="p_age listP"></p>
+
+                    </div>
+
+                    <!-- Rank -->
+                    <div class="col-4-12 box">
+                        <div class="wrap-col">
+
+                            <h3 class="center">Rank</h3>
+                            <p class="p_rank center"></p>
+
+                        </div>
+                    </div>
+
+                    <!-- Popularity -->
+                    <div class="col-4-12 box">
+                        <div class="wrap-col">
+
+                            <h3 class="center">Popularity</h3>
+                            <p class="p_popularity center"></p>
+
+                        </div>
+                    </div>
+
+                    <!-- Capital -->
+                    <div class="col-4-12 box">
+                        <div class="wrap-col">
+
+                            <h3 class="center">Capital</h3>
+                            <p class="p_capital center"></p>
+
+                        </div>
+                    </div>
+
+                    <!-- weapon stats -->
+                    <!-- stats -->
+                    <h2>Stats</h2>
+
+                    <!-- Daggers -->
+                    <div class="col-full box">
+
+                        <img class="listImg" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/weapons/dagger.svg" alt="">
+
+                        <h4>Daggers</h4>
+                        <p class="p_dagger listP"></p>
+
+                    </div>
+
+                    <!-- sword -->
+                    <div class="col-full box">
+
+                        <img class="listImg" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/weapons/sword.svg" alt="">
+
+                        <h4>Sword</h4>
+                        <p class="p_sword listP"></p>
+
+                    </div>
+
+                    <!-- axe -->
+                    <div class="col-full box">
+
+                        <img class="listImg" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/weapons/axe.svg" alt="">
+
+                        <h4>Axe</h4>
+                        <p class="p_axe listP"></p>
+
+                    </div>
+
+                    <!-- mace -->
+                    <div class="col-full box">
+
+                        <img class="listImg" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/weapons/mace.svg" alt="">
+
+                        <h4>Mace</h4>
+                        <p class="p_mace listP"></p>
+
+                    </div>
+
+                    <!-- fist weapon -->
+                    <div class="col-full box">
+
+                        <img class="listImg" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/feedback.svg" alt="">
+
+                        <h4>Fist weapon</h4>
+                        <p class="p_fistWeapon listP"></p>
+
+                    </div>
+
+                    <!-- staff weapon -->
+                    <div class="col-full box">
+
+                        <img class="listImg" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/feedback.svg" alt="">
+
+                        <h4>Staff weapon</h4>
+                        <p class="p_staffWeapon listP"></p>
+
+                    </div>
+
+                    <!-- Polearms -->
+                    <div class="col-full box">
+
+                        <img class="listImg" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/weapons/polearm.svg" alt="">
+
+                        <h4>Polearms</h4>
+                        <p class="p_polearms listP"></p>
+
+                    </div>
+
+                    <!-- Trown weapon -->
+                    <div class="col-full box">
+
+                        <img class="listImg" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/weapons/trownWeapon.svg" alt="">
+
+                        <h4>Trown weapon</h4>
+                        <p class="p_trownWeapon listP"></p>
+
+                    </div>
+
+                    <!-- bow -->
+                    <div class="col-full box">
+
+                        <img class="listImg" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/weapons/bow.svg" alt="">
+
+                        <h4>Bow</h4>
+                        <p class="p_bow listP"></p>
+
+                    </div>
+
+                    <!-- Crossbow -->
+                    <div class="col-full box">
+
+                        <img class="listImg" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/feedback.svg" alt="">
+
+                        <h4>Crossbow</h4>
+                        <p class="p_crossbow listP"></p>
+
+                    </div>
+
+                </div>
+            </div><!-- end information -->
+        </div> <!-- styleAccount end -->
+                <!--                      -->
+                <!-- create protagonist  -->
+                <!--                      -->
+                <div id="styleNewProtagonist">
+
+                    <!-- header -->
+                    <header><h1>Create protagonist</h1></header>
+
+                    <!-- gender female -->
+                    <div id="female" class="leftButton1">
+                        <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/female.svg">
+                        <h2>Female</h2>
+                    </div>
+
+                    <!-- gender male -->
+                    <div id="male" class="rightButton1">
+                        <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/male.svg">
+                        <h2>Male</h2>
+                    </div>
+
+                    <!-- Race -->
+                    <div class="rightButton2">
+                        <select id="selectRace">
+                            <option value="" disabled selected>Choose your race</option>
+                            <option id="raceHuman" value="Human">Human</option>
+                            <option id="raceElf" value="Elf">Elf</option>
+                            <option id="raceDwarf" value="Dwarf">Dwarf</option>
+                            <option id="raceOrc" value="Orc">Orc</option>
+                            <option id="raceGnome" value="Gnome">Gnome</option>
+                        </select>
+                        <h2>Race</h2>
+                    </div>
+
+                    <!-- picture -->
+                    <div id="p_avatar">
+                        <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/avatar/default.svg">
+                    </div>
+
+                    <!-- camera button -->
+                    <div id="p_camera" class="middleButton">
+                        <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/camera.svg">
+                        <h2>Camera</h2>
+                    </div>
+
+                    <!-- information -->
+                    <div class="col-full">
+                        <div class="wrap-col">
+
+                            <h2>Name</h2>
+
+                            <form><input id="pName" class="box" placeholder="Ex: Tylea Geary" /></form>
+
+                            <h2>Information</h2>
+
+                            <!-- Protagonist description -->
+                            <div class='col-full box'>
+                                <div class='wrap-col'>
+                                    <p id="p_description">Race description...</p>
+                                </div>
+                            </div>
+
+                            <!-- Protagonist stats -->
+                            <div class='col-full box'>
+                                <div class='wrap-col'>
+                                    <p id="p_stats">Race stats...</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div> <!-- styleNewProtagonist end -->
+                <!--                      -->
+                <!--    buttonMenu        -->
+                <!--                      -->
+                <div id="buttonMenu"></div>
+
+                <!--                      -->
+                <!--    messages          -->
+                <!--                      -->
+                <!-- message -->
+                <div id="messageBox"></div>
+            </div> <!-- wrapper end -->
+            <!--                      -->
+            <!--    JavaScript        -->
+            <!--                      -->
+            <!-- Jquery -->
+            <script type="text/javascript" src="scripts/jquery-3.3.1.min.js" async defer></script>
+
+            <!-- device ready -->
+            <script type="text/javascript" src="scripts/index.js" async defer></script>
+
+            <!-- map -->
+            <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=getMap' async defer></script>
+
+            <!-- cordova -->
+            <script type="text/javascript" src="cordova.js" async defer></script>
+
+</body>
+</html>
